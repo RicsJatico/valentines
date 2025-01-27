@@ -2,5 +2,5 @@ services:
   - type: web
     name: valentines
     env: php
-    buildCommand: ""
-    startCommand: php -S 0.0.0.0:10000
+    buildCommand: "composer install"  # Optional: If you are using Composer for dependencies
+    startCommand: "php -S 0.0.0.0:10000"  # Start the PHP built-in server
