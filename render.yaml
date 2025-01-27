@@ -1,5 +1,7 @@
 services:
   - type: web
     name: valentines
-    buildCommand: ""  # No build command, since you're not using Composer
-    startCommand: "php -S 0.0.0.0:10000"  # Start PHP built-in server
+    env: static
+    buildCommand: ""  # No build step required
+    startCommand: "php -S 0.0.0.0:10000"
+    staticPublishPath: public
