@@ -1,0 +1,239 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine’s Plan</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #ffe6e6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .container {
+            text-align: center;
+        }
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            color: #ff3366;
+            margin-bottom: 20px;
+        }
+        .button {
+            padding: 15px 30px;
+            font-size: 1.5rem;
+            color: white;
+            background: linear-gradient(to bottom right, #ff6699, #ff3366);
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            outline: none;
+            margin: 5px;
+        }
+        .button::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s ease, height 0.3s ease;
+        }
+        .button:hover::before {
+            width: 300%;
+            height: 300%;
+        }
+        .button:hover {
+            animation: heart-pulse 1s infinite;
+        }
+        @keyframes heart-pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+        .background-hearts {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        .heart {
+            width: 20px;
+            height: 20px;
+            background: #ff3366;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            animation: float 5s infinite ease-in-out;
+            opacity: 0.5;
+            transform: rotate(45deg);
+            clip-path: polygon(50% 0%, 61% 16%, 100% 16%, 100% 37%, 50% 100%, 0 37%, 0% 16%, 39% 16%);
+        }
+        @keyframes float {
+            0% {
+                transform: translate(-50%, -50%) rotate(45deg);
+                opacity: 0.5;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translate(-50%, -200%) rotate(45deg);
+                opacity: 0;
+            }
+        }
+        .top-right-buttons {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+        }
+        .top-right-buttons .button {
+    padding: 8px 16px;
+    font-size: 1rem;
+    border-radius: 20px;
+}
+        @media (max-width : 480px) {
+            h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            color: #ff3366;
+            margin-bottom: 20px;
+        }
+        .button {
+            padding: 10px 30px;
+            font-size: 1.5rem;
+            color: white;
+            background: linear-gradient(to bottom right, #ff6699, #ff3366);
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            outline: none;
+            margin: 5px;
+        }
+        .button::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s ease, height 0.3s ease;
+        }
+        .button:hover::before {
+            width: 300%;
+            height: 300%;
+        }
+        .button:hover {
+            animation: heart-pulse 1s infinite;
+        }
+        @keyframes heart-pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+        .background-hearts {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        .heart {
+            width: 20px;
+            height: 20px;
+            background: #ff3366;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            animation: float 5s infinite ease-in-out;
+            opacity: 0.5;
+            transform: rotate(45deg);
+            clip-path: polygon(50% 0%, 61% 16%, 100% 16%, 100% 37%, 50% 100%, 0 37%, 0% 16%, 39% 16%);
+        }
+        @keyframes float {
+            0% {
+                transform: translate(-50%, -50%) rotate(45deg);
+                opacity: 0.5;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translate(-50%, -200%) rotate(45deg);
+                opacity: 0;
+            }
+        }
+        .top-right-buttons {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+}
+
+.top-right-buttons .button {
+    padding: 8px 16px;
+    font-size: 1rem;
+    border-radius: 20px;
+}
+        }
+    </style>
+</head>
+<body>
+    <div class="background-hearts">
+        <div class="heart" style="left: 20%; animation-delay: 0s;"></div>
+        <div class="heart" style="left: 40%; animation-delay: 2s;"></div>
+        <div class="heart" style="left: 60%; animation-delay: 4s;"></div>
+        <div class="heart" style="left: 80%; animation-delay: 6s;"></div>
+    </div>
+    <div class="top-right-buttons">
+        <a href="sign-in.php">
+            <button class="button">Login</button>
+        </a>
+        <a href="signup.php">
+            <button class="button">Sign Up</button>
+        </a>
+    </div>
+    <div class="container landing">
+        <h1>Plan a Valentine’s with Your Loved Ones</h1>
+        <a href="signup.php">
+            <button class="button">Explore</button>
+        </a>
+    </div>
+    <script>    // Check if reference_number exists in the URL parameters
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const referenceNumber = urlParams.get('reference_number');
+
+            if (referenceNumber) {
+                // Redirect to fetch.php with the reference_number parameter
+                window.location.href = 'fetch.php?reference_number=' + referenceNumber;
+            }
+        }</script>
+</body>
+</html>
